@@ -10,19 +10,19 @@ function handleReload() {
         const [_unk, _hash] = native.getCurrentPedWeapon(alt.Player.local.scriptID, undefined, undefined);
         if (alt.Player.local.vehicle) {
             alt.clearInterval(interval);
-            native.setAmmoInClip(alt.Player.local.scriptID, _hash, 9999);
+            native.setAmmoInClip(alt.Player.local.scriptID, _hash, 0);
             return;
         }
 
         if (attempts >= 4) {
             alt.clearInterval(interval);
-            native.setAmmoInClip(alt.Player.local.scriptID, _hash, 9999);
+            native.setAmmoInClip(alt.Player.local.scriptID, _hash, 0);
             return;
         }
 
         if (native.isPedReloading(alt.Player.local.scriptID)) {
             alt.clearInterval(interval);
-            native.setAmmoInClip(alt.Player.local.scriptID, _hash, 9999);
+            native.setAmmoInClip(alt.Player.local.scriptID, _hash, 0);
             return;
         } else {
             native.setAmmoInClip(alt.Player.local.scriptID, _hash, 1);

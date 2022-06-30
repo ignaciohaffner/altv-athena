@@ -1,4 +1,5 @@
 import * as alt from 'alt-server';
+import { giveWeaponComponentToWeaponObject } from 'natives';
 import { Athena } from '../../../../../server/api/athena';
 import { command } from '../../../../../server/decorators/commands';
 import { sha256Random } from '../../../../../server/utility/encryption';
@@ -45,7 +46,7 @@ class WeaponCommands {
         newItem.uuid = sha256Random(JSON.stringify(newItem));
         newItem.icon = weaponName.toLowerCase();
         newItem.slot = inv.slot;
-        newItem.data.hash = weapon.hash;
+        newItem.data.hash = weapon.hash; 
 
         if (weapon.stats && Object.keys(weapon.stats).length >= 1) {
             Object.keys(weapon.stats).forEach((key) => {
@@ -67,5 +68,11 @@ class WeaponCommands {
     private static handleRemoveWeapons(player: alt.Player): void {
         const weps = Athena.player.inventory.removeAllWeapons(player);
         Athena.player.emit.message(player, `Removed: ${weps.length} weapons`);
+    }
+
+    @command('agregacomponente', '/agregacomponente [nombre componente]', PERMISSIONS.ADMIN)
+    private static handleComponente(player: alt.Player, component: number){
+        player.addWeaponComponent(player.currentWeapon, component)
+        console.log(player.currentWeaponComponents, player.currentWeapon)
     }
 }

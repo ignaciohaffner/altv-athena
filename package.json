@@ -23,9 +23,9 @@
         "test": ""
     },
     "devDependencies": {
-        "@altv/types-client": "^2.1.9",
+        "@altv/types-client": "^2.2.1",
         "@altv/types-natives": "^1.4.4",
-        "@altv/types-server": "^2.3.7",
+        "@altv/types-server": "^2.3.8",
         "@altv/types-shared": "^1.2.6",
         "@altv/types-webview": "^1.0.2",
         "@altv/types-worker": "^1.0.6",
@@ -63,6 +63,7 @@
         "axios": "0.26.1",
         "discord.js": "^13.7.0",
         "elliptic": "6.5.4",
+        "react": "^18.2.0",
         "sjcl": "1.0.8",
         "sockjs": "0.3.21",
         "sockjs-client": "1.5.2"

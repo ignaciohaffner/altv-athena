@@ -14,6 +14,7 @@ export const LOCALE_KEYS = {
     COMMAND_LOW: `command-low`,
     COMMAND_MOD_CHAT: `command-mod-chat`,
     COMMAND_ME: `command-me`,
+    COMMAND_GR: `command-gr`,
     COMMAND_NO_CLIP: `command-no-clip`,
     COMMAND_QUIT_JOB: `command-quit-job`,
     COMMAND_REMOVE_ALL_WEAPONS: `command-remove-all-weapons`,

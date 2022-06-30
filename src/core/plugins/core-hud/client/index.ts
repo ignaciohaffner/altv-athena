@@ -114,7 +114,8 @@ class InternalFunctions implements ViewModel {
         HudView.registerComponent(HUD_COMPONENT.WATER, InternalFunctions.defaultWaterComponent, 1000);
         HudView.registerComponent(HUD_COMPONENT.FOOD, InternalFunctions.defaultFoodComponent, 1000);
         HudView.registerComponent(HUD_COMPONENT.INTERACTIONS, InternalFunctions.defaultInteractionsComponent, 500);
-
+        HudView.registerComponent(HUD_COMPONENT.STREET, InternalFunctions.defaultStreetComponent,100);
+        HudView.registerComponent(HUD_COMPONENT.CANAL, InternalFunctions.defaultCanalComponent,1000)
         // Vehicle Components
         HudView.registerComponent(HUD_COMPONENT.IS_IN_VEHICLE, InternalFunctions.defaultIsInVehicleComponent, 1000);
         HudView.registerComponent(HUD_COMPONENT.SEATBELT, InternalFunctions.defaultSeatbeltComponent, 100);
@@ -278,6 +279,20 @@ class InternalFunctions implements ViewModel {
 
     static defaultInteractionsComponent(propName) {
         InternalFunctions.passComponentInfo(propName, JSON.stringify(interactions.concat(customInteractions)), true);
+    }
+
+    static defaultStreetComponent(propName) {
+        const coordsX = alt.Player.local.pos.x;
+        const coordsY = alt.Player.local.pos.y;
+        const coordsZ = alt.Player.local.pos.z;
+        const hashArray = native.getStreetNameAtCoord(coordsX,coordsY,coordsZ)  
+        const value = `${native.getStreetNameFromHashKey(hashArray[1])} y ${native.getStreetNameFromHashKey(hashArray[2])}`
+        InternalFunctions.passComponentInfo(propName, value)
+    }
+
+    static defaultCanalComponent(propName) {
+        const value =`Canal de radio: ${alt.Player.local.getSyncedMeta('canalRadioserver')}`
+        InternalFunctions.passComponentInfo(propName, value)
     }
 }
 

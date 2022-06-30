@@ -28,6 +28,14 @@ export interface IRoleplayCmds {
     COMMAND_LOW_DISTANCE: number;
 
     /**
+     * Distance of the /shout command
+     * @type {number}
+     * @memberof IRoleplayCmds
+     */
+     COMMAND_SHOUT_DISTANCE: number;
+
+
+    /**
      * Distance of the /w command
      * @type {number}
      * @memberof IRoleplayCmds
@@ -65,4 +73,20 @@ export interface IRoleplayCmds {
      * @memberof IRoleplayCmds
      */
     CHAT_ROLEPLAY_WHISPER_COLOR: string;
+
+     /**
+     * Hex color of /DO command
+     * Must be HEX Color ie. `{e6e6ce}`
+     * @type {string}
+     * @memberof IRoleplayCmds
+     */
+      CHAT_ROLEPLAY_DO_COLOR: string;
+
+       /**
+     * Hex color of /m command
+     * Must be HEX Color ie. `{e6e6ce}`
+     * @type {string}
+     * @memberof IRoleplayCmds
+     */
+    CHAT_ROLEPLAY_MEGAPHONE_COLOR: string;
 }

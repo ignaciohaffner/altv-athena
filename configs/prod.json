@@ -22,6 +22,10 @@
     ],
     "resources": [
         "mods/charger",
+        "mods/glock17",
+        "mods/m4",
+        "mods/rem870",
+        "mods/taser",
         "webviews",
         "core"
     ],

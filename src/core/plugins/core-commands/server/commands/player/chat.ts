@@ -23,7 +23,7 @@ class ChatCommands {
         alt.emitClient(
             closestPlayers,
             View_Events_Chat.Append,
-            `${RoleplayCmdsConfig.CHAT_ROLEPLAY_COLOR}* ${fullMessage} ((${player.data.name}))`,
+            `${RoleplayCmdsConfig.CHAT_ROLEPLAY_DO_COLOR}* [${player.data.name} - ${player.id}] ${fullMessage} `,
         );
     }
 
@@ -58,6 +58,23 @@ class ChatCommands {
             closestPlayers,
             View_Events_Chat.Append,
             `${RoleplayCmdsConfig.CHAT_ROLEPLAY_COLOR}${player.data.name} ${fullMessage}`,
+        );
+    }
+
+    @command('gr', LocaleController.get(LOCALE_KEYS.COMMAND_GR, 'gr'), PERMISSIONS.NONE)
+    private static handleGrCommand(player: alt.Player, ...args: any[]) {
+        if (args.length <= 0) {
+            Athena.player.emit.message(player, Athena.controllers.chat.getDescription('gr'));
+            return;
+        }
+
+        const fullMessage = args.join(' ');
+        const closestPlayers = Athena.player.get.playersByGridSpace(player, RoleplayCmdsConfig.COMMAND_SHOUT_DISTANCE);
+
+        alt.emitClient(
+            closestPlayers,
+            View_Events_Chat.Append,
+            `${player.data.name} grita: ${fullMessage}`,
         );
     }
 

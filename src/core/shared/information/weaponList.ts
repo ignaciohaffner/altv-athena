@@ -5,6 +5,7 @@ export interface Weapon {
     type?: string;
     price?: number;
     clip?: number;
+    component?: string;
     stats?: {
         damage?: number;
         rate?: number;

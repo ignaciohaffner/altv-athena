@@ -23,14 +23,15 @@ let objective: string;
 let isUpdating: boolean = false;
 let hudElements: Array<IHud> = [
     {
+        // x: 0.98
         identifier: 'hud-cash',
         position: {
-            x: 0.98,
+            x: 0.3,
             y: 0.02,
         },
         padding: 0.04,
         align: 2,
-        scale: 0.5,
+        scale: 0.5, 
         color: new alt.RGBA(255, 255, 255, 225),
         callback: (self: IHud, pos: { x: number; y: number }) => {
             const value = alt.Player.local.meta.cash ? alt.Player.local.meta.cash : 0;

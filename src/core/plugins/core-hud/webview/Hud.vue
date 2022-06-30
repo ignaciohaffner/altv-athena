@@ -32,6 +32,13 @@
             <Armour class="mb-2" :value="armour" />
             <Health class="mb-2" :value="health" />
         </div>
+        <div class='street-placement'>
+            <Street class='mb-2' :value="street" />
+        </div>
+        <div class='canal-placement'>
+            <Street class='mb-2' :value="canal" />
+        </div>
+        
     </div>
 </template>
 
@@ -55,6 +62,8 @@ export default defineComponent({
         Bank: defineAsyncComponent(() => import('./components/Bank.vue')),
         Speedo: defineAsyncComponent(() => import('./components/Speedo.vue')),
         Time: defineAsyncComponent(() => import('./components/Time.vue')),
+        Street: defineAsyncComponent(() => import('./components/Street.vue')),
+        Canal: defineAsyncComponent(() => import('./components/Canal.vue')),
     },
     // Used to define state
     data() {
@@ -76,6 +85,8 @@ export default defineComponent({
             isInVehicle: false,
             interactions: [],
             updateCount: 0,
+            street: 'Nache',
+            canal: 'Canal default'
         };
     },
     mounted() {
@@ -184,5 +195,16 @@ export default defineComponent({
     transform: skewX(-15deg);
     padding-top: 8px;
     padding-right: 50px;
+}
+
+.street-placement {
+    position: absolute;
+    bottom: 200px;
+    margin-left: 20px;
+}
+.canal-placement {
+    position: absolute;
+    bottom: 220px;
+    margin-left: 20px;
 }
 </style>

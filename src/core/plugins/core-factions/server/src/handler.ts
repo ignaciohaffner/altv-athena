@@ -229,6 +229,7 @@ export class FactionHandler {
                 Database.deleteById(storageId, Collections.Storage);
             }
         }
+        
 
         return { status: true, response: `Deleted faction successfully` };
     }

@@ -19,6 +19,7 @@ async function handlePlayerConnect(player: alt.Player): Promise<void> {
 
     // What is this? It's a series of steps the client follows for a login sequence.
     AgendaSystem.goNext(player, true);
+    player.setSyncedMeta('canalRadioserver', '0');
 }
 
 alt.onClient(SYSTEM_EVENTS.BEGIN_CONNECTION, handlePlayerConnect);

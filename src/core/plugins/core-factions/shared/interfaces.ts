@@ -212,6 +212,20 @@ export interface FactionCore {
     name: string;
 
     /**
+     * The shortname of this Faction
+     * @type {string}
+     * @memberof Faction
+     */
+     shortname: string;
+
+     /**
+     * The type of the Faction
+     * @type {string}
+     * @memberof Faction
+     */
+      type: string;
+      
+    /**
      * Amount of money in the bank for this Faction.
      *
      * @type {number}
