@@ -18,6 +18,7 @@
         "js-module"
     ],
     "resources": [
+        "mods/charger",
         "core"
     ],
     "tags": [

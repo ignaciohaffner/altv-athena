@@ -1,0 +1,3 @@
+[submodule "src/core/plugins/plugin-attachmenteditor"]
+	path = src/core/plugins/plugin-attachmenteditor
+	url = https://github.com/Booster1212/plugin-attachmenteditor

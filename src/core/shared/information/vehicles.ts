@@ -6453,4 +6453,16 @@ export const VehicleData: Array<VehicleInfo> = [
         price: 99999999999,
         storage: 24,
     },
+
+    // MODS
+
+    {
+        display: 'chargerpd',
+        name: 'chargerpd',
+        type: VEHICLE_TYPE.VEHICLE,
+        class: VEHICLE_CLASS.EMERGENCY,
+        sell: false,
+        price: 999999999,
+        storage: 24,
+    },
 ];

@@ -21,6 +21,7 @@
         "js-module"
     ],
     "resources": [
+        "mods/charger",
         "webviews",
         "core"
     ],
