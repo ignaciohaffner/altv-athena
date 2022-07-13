@@ -16,7 +16,6 @@ PluginSystem.registerPlugin(PLUGIN_NAME, () => {
 alt.on('weaponDamage', (source, target, weaponHash, damage, offset, bodyPart) => {
     const validPlayers = [...alt.Player.all].filter((x) => x && x.valid && x.data);
     alt.emitClient(validPlayers, View_Events_Chat.Append, `[Heridas] ${source.name} le hizo daño a ${target}, infligio ${damage} y en la parte ${partesDelCuerpo[bodyPart]}`);
-    
 } )
 
 
