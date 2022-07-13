@@ -336,7 +336,7 @@ export class FactionCommands {
             return
         }
         if (vehicle.data.ownerType !=  VEHICLE_OWNERSHIP.FACTION) {
-            Athena.player.emit.message(player, 'No estas en un vehiculo equipado.')
+            Athena.player.emit.message(player, 'No estas en un vehiculo equipado de faccion')
             return
         }
         const fullMessage = args.join(' ');
@@ -350,6 +350,8 @@ export class FactionCommands {
 
     
     }
+
+    
 
     @command('equipar', '/equipar', PERMISSIONS.NONE)
     static async handleEquipar(player: alt.Player){
